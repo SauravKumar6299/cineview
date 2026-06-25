@@ -1,0 +1,1 @@
+export { default as SettingsPage } from './ui/pages/SettingsPage'

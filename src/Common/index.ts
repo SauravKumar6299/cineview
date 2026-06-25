@@ -1,0 +1,1 @@
+export { default as PagePlaceholder } from './ui/components/PagePlaceholder'
