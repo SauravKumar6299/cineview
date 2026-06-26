@@ -1,18 +1,16 @@
-import { createContext, useCallback, useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import {
   AUTH_CREDENTIALS,
   INVALID_CREDENTIALS_MESSAGE,
 } from '../../core/constants/Auth.constants'
 import type {
-  AuthContextValue,
   Credentials,
   LoginResult,
   Session,
 } from '../../core/types/Auth.types'
 import { clearSession, readSession, writeSession } from '../services/Session.services'
-
-export const AuthContext = createContext<AuthContextValue | null>(null)
+import { AuthContext } from './AuthContext'
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<Session | null>(() => readSession())
@@ -38,7 +36,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(null)
   }, [])
 
-  const value = useMemo<AuthContextValue>(
+  const value = useMemo(
     () => ({ isAuthenticated: user !== null, user, login, logout }),
     [user, login, logout],
   )

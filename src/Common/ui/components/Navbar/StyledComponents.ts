@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const Bar = styled.header`
+  export const Bar = styled.header`
   position: sticky;
   top: 0;
   z-index: 50;
@@ -9,8 +9,8 @@ export const Bar = styled.header`
   align-items: center;
   gap: 1.5rem;
   padding: 0.75rem 1.5rem;
-  background: #0b0c10;
-  border-bottom: 1px solid #1f2230;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
 `
 
 export const Brand = styled(Link)`
@@ -36,12 +36,12 @@ export const Links = styled.nav`
     transition: color 0.15s ease;
 
     &:hover {
-      color: #e5e7eb;
+      color: var(--color-text);
     }
 
     &.active {
-      color: #fff;
-      border-bottom-color: #6366f1;
+      color: var(--color-nav-active);
+      border-bottom-color: var(--color-primary);
     }
   }
 `
@@ -58,17 +58,17 @@ export const SearchInput = styled.input`
   max-width: 100%;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
-  border: 1px solid #2e303a;
-  background: #0f1117;
-  color: inherit;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text);
   outline: none;
 
   &::placeholder {
-    color: #6b7280;
+    color: var(--color-text-faint);
   }
 
   &:focus {
-    border-color: #6366f1;
+    border-color: var(--color-primary);
   }
 
   @media (max-width: 480px) {

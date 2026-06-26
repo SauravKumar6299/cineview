@@ -17,9 +17,9 @@ export const LabelText = styled.span`
 export const InputRow = styled.div`
   display: flex;
   align-items: center;
-  border: 1px solid #2e303a;
+  border: 1px solid var(--color-border-strong);
   border-radius: 0.5rem;
-  background: #0f1117;
+  background: var(--color-surface-2);
 `
 
 export const StyledInput = styled.input`
@@ -33,7 +33,7 @@ export const StyledInput = styled.input`
 
 export const ErrorText = styled.span`
   font-size: 0.75rem;
-  color: #f87171;
+  color: var(--color-danger);
 `
 export const LabelRow = styled.div`
   display: flex;

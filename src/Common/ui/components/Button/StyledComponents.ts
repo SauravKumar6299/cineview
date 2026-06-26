@@ -19,7 +19,7 @@ export const StyledButton = styled.button<{ $variant: 'primary' | 'ghost' }>`
   ${({ $variant }) =>
     $variant === 'primary'
       ? css`
-          background: #6366f1;
+          background: var(--color-primary);
           color: #fff;
           border: none;
         `
