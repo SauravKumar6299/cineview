@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom'
 export const Brand = styled(Link)`
   font-size: 1.25rem;
   font-weight: 700;
-  color: #a5b4fc;
+  color:rgb(102, 124, 235);
   text-decoration: none;
   white-space: nowrap;
 `

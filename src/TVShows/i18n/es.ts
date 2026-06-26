@@ -1,6 +1,9 @@
 export const tvEs = {
     seasons: 'Temporadas',
     episodes: 'Episodios',
+    rows: {
+      topCast: 'Reparto principal',
+    },
     notFound: {
       title: 'Serie no encontrada',
       body: 'La serie que buscas no existe.',

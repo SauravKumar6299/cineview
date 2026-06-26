@@ -27,11 +27,12 @@ export const EpBadge = styled.span`
   position: absolute;
   bottom: 0.4rem;
   left: 0.4rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--color-ep-badge);
   padding: 0.1rem 0.4rem;
   border-radius: 0.3rem;
   font-size: 0.7rem;
   font-weight: 700;
+  color: var(--color-ep-badge-text);
 `
 
 export const Content = styled.div`

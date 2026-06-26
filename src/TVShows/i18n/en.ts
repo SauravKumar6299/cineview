@@ -1,6 +1,9 @@
 export const tvEn = {
     seasons: 'Seasons',
     episodes: 'Episodes',
+    rows: {
+        topCast: 'Top Cast',
+      },
     notFound: {
       title: 'Show not found',
       body: "The TV show you're looking for doesn't exist.",

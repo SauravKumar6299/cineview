@@ -18,7 +18,7 @@ interface EpisodeRowProps {
 }
 
 const EpisodeRow = ({ episode }: EpisodeRowProps) => {
-  const { t } = useTranslation('tv')
+  const { t } = useTranslation('tvShows')
   return (
   <Row>
     <Still>

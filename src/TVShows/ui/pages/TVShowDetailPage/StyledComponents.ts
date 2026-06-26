@@ -11,7 +11,7 @@ export const Hero = styled.section<{ $backdrop: string }>`
   border-radius: 1rem;
   overflow: hidden;
   background: ${({ $backdrop }) =>
-      $backdrop ? `url(${$backdrop})` : 'linear-gradient(var(--color-surface), var(--color-surface))'}
+      $backdrop ? `url(${$backdrop})` : 'linear-gradient(var(--color-hero-gradient-1) 10%, var(--color-hero-gradient-2))'}
     center / cover no-repeat;
 `
 
@@ -19,7 +19,7 @@ export const HeroOverlay = styled.div`
   display: flex;
   gap: 2rem;
   padding: 2rem;
-  background: linear-gradient(90deg, rgba(11, 12, 16, 0.96) 30%, rgba(11, 12, 16, 0.6) 100%);
+  background: linear-gradient(90deg, var(--color-hero-gradient-1) 10%, var(--color-hero-gradient-2) 60%);
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -56,28 +56,32 @@ export const MetaRow = styled.div`
   gap: 0.75rem;
   color: var(--color-text-secondary);
   font-size: 0.9rem;
+  color: white;
 `
 
 export const Genres = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  color: white;
 `
 
 export const GenreTag = styled.span`
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid white;
   font-size: 0.75rem;
+  color: white;
 `
 
 export const Tagline = styled.p`
   font-style: italic;
   color: var(--color-text-muted);
+  color: white;
 `
 
 export const Overview = styled.p`
-  color: var(--color-text);
+  color: white;
   line-height: 1.6;
 `
 

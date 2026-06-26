@@ -24,6 +24,8 @@
   --color-nav-active: #ffffff;
   --color-hero-gradient-1: rgba(11, 12, 16, 0.96);
   --color-hero-gradient-2: rgba(50, 52, 59, 0.6);
+  --color-ep-badge: white;
+  --color-ep-badge-text: black;
 }
 
 :root[data-theme='light'] {
@@ -49,6 +51,8 @@
   --color-nav-active: #0b0c10;
   --color-hero-gradient-1: rgba(71, 72, 75, 0.96);
   --color-hero-gradient-2: rgba(145, 146, 147, 0.6);
+  --color-ep-badge: black;
+  --color-ep-badge-text: white;
 }
 
 html,

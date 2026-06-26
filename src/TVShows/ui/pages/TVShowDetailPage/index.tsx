@@ -39,7 +39,7 @@ import {
 } from './StyledComponents'
 
 const NotFound = () => {
-  const { t } = useTranslation('tv')
+  const { t } = useTranslation('tvShows')
   return (
   <NotFoundWrap>
     <h1>{t('notFound.title')}</h1>
@@ -52,7 +52,7 @@ const NotFound = () => {
 }
 
 const TVShowDetailPage = () => {
-  const { t } = useTranslation('tv')
+  const { t } = useTranslation('tvShows')
   const { tvId, seasonNumber } = useParams()
   const id = Number(tvId)
   const [isTrailerOpen, setIsTrailerOpen] = useState(false)
@@ -99,8 +99,8 @@ const TVShowDetailPage = () => {
               <MetaRow>
                 <RatingBadge value={show.vote_average} />
                 {year ? <span>{year}</span> : null}
-                <span>{show.number_of_seasons} {t('seasonCount', { count: show.number_of_seasons })}</span>
-                <span>{show.number_of_episodes} {t('episodeCount', { count: show.number_of_episodes })}</span>
+                <span>{t('seasonCount', { count: show.number_of_seasons })}</span>
+                <span>{t('episodeCount', { count: show.number_of_episodes })}</span>
                 {show.status ? <span>{show.status}</span> : null}
               </MetaRow>
               <Genres>
@@ -113,7 +113,7 @@ const TVShowDetailPage = () => {
                 {trailer ? (
                   <Button onClick={() => setIsTrailerOpen(true)}>▶ {t('playTrailer')}</Button>
                 ) : null}
-                <Button variant="ghost" type="button">+ {t('watchlistAdd')}</Button>
+                <Button type="button">+ {t('watchlistAdd')}</Button>
               </Actions>
             </Info>
           </HeroOverlay>
