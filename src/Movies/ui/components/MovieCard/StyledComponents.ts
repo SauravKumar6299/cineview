@@ -41,3 +41,9 @@ export const CardTitle = styled.h3`
   overflow: hidden;
   text-overflow: ellipsis;
 `
+export const CardActions = styled.div`
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  justify-content: space-between;
+`

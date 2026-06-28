@@ -1,6 +1,6 @@
 export const AUTH_CREDENTIALS = {
-    email: 'admin@cineview.com',
-    password: 'cineview123',
+    email: import.meta.env.VITE_ADMIN_EMAIL,
+    password: import.meta.env.VITE_ADMIN_PASSWORD,
   } as const
   
   export const SESSION_STORAGE_KEY = 'cineview.session'

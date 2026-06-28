@@ -74,3 +74,10 @@ export const PlaceholderToggle = styled.button`
   cursor: not-allowed;
   flex: 0 0 auto;
 `
+export const WatchedToggle = styled.input`
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex: 0 0 auto;
+`

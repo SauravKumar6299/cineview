@@ -4,12 +4,23 @@ import { List } from './StyledComponents'
 
 interface EpisodeListProps {
   episodes: Episode[]
+  isEpisodeWatched: (episodeId: number) => boolean
+  onToggleEpisode: (episodeId: number) => void
 }
 
-const EpisodeList = ({ episodes }: EpisodeListProps) => (
+const EpisodeList = ({
+  episodes,
+  isEpisodeWatched,
+  onToggleEpisode,
+}: EpisodeListProps) => (
   <List>
     {episodes.map((episode) => (
-      <EpisodeRow key={episode.id} episode={episode} />
+      <EpisodeRow
+        key={episode.id}
+        episode={episode}
+        isWatched={isEpisodeWatched(episode.id)}
+        onToggleWatched={() => onToggleEpisode(episode.id)}
+      />
     ))}
   </List>
 )

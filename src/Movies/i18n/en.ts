@@ -19,6 +19,7 @@
     },
     playTrailer: 'Watch Trailer',
     watchlistAdd: 'Watchlist',
+    watchlistRemove: 'Remove from watchlist',
     notFound: {
       title: 'Movie not found',
       body: "The movie you're looking for doesn't exist.",

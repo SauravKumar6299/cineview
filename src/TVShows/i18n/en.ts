@@ -25,5 +25,11 @@ export const tvEn = {
     episodeCount_other: '{{count}} episodes',
     episodeLabel: 'EP {{number}}',
     chapterTitle: 'Chapter {{number}}: {{title}}',
-    markWatched: 'Mark as watched (coming soon)',
+    progress: {
+        season: '{{watched}} of {{total}} watched',
+        show: '{{watched}} of {{total}} episodes watched',
+        markAll: 'Mark all',
+        unmarkAll: 'Unmark all',
+      },
+    markWatched: 'Mark as watched',
   }

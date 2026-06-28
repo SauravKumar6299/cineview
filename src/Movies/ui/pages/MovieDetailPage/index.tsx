@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useCollection, AddToListPopover } from '../../../../Collection'
+import { observer } from 'mobx-react-lite'
 import {
   Button,
   ContentRow,
@@ -56,8 +58,9 @@ const NotFound = () => {
     )
 }
 
-const MovieDetailPage = () => {
+const MovieDetailPage = observer(() => {
   const { t } = useTranslation('movies')
+  const collection = useCollection()
   const { movieId } = useParams()
   const id = Number(movieId)
   const [isTrailerOpen, setIsTrailerOpen] = useState(false)
@@ -81,6 +84,20 @@ const MovieDetailPage = () => {
   }
 
   const movie = detailQuery.data
+  const isInWatchlist = collection.isInWatchlist('movie', movie.id)
+
+  const snapshot = {
+    id: movie.id,
+    mediaType: 'movie' as const,
+    title: movie.title,
+    posterPath: movie.poster_path,
+    voteAverage: movie.vote_average,
+    releaseDate: movie.release_date,
+  }
+
+    const handleToggleWatchlist = () => {
+    collection.toggleWatchlist(snapshot)
+    }
   const trailer =
     movie.videos.results.find((video) => video.site === 'YouTube' && video.type === 'Trailer') ??
     movie.videos.results.find((video) => video.site === 'YouTube')
@@ -120,7 +137,10 @@ const MovieDetailPage = () => {
                 {trailer ? (
                   <Button onClick={() => setIsTrailerOpen(true)}>▶ {t('playTrailer')}</Button>
                 ) : null}
-                <Button type="button">+ {t('watchlistAdd')}</Button>
+                <Button type="button" onClick={handleToggleWatchlist}>
+                    {isInWatchlist ? '✓' : '+'} {isInWatchlist ? t('watchlistRemove') : t('watchlistAdd')}
+                </Button>
+                <AddToListPopover snapshot={snapshot} compact />
               </Actions>
             </Info>
           </HeroOverlay>
@@ -169,6 +189,6 @@ const MovieDetailPage = () => {
       ) : null}
     </Page>
   )
-}
+})
 
 export default MovieDetailPage

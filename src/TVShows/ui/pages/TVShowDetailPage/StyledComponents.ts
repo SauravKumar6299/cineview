@@ -114,3 +114,28 @@ export const NotFoundWrap = styled.div`
   padding: 4rem 1rem;
   text-align: center;
 `
+
+export const ProgressWrap = styled.div`
+  display: grid;
+  gap: 0.35rem;
+  max-width: 360px;
+`
+
+export const ProgressMeta = styled.span`
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  font-weight: 600;
+`
+
+export const ProgressTrack = styled.div`
+  height: 0.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.24);
+  overflow: hidden;
+`
+
+export const ProgressFill = styled.div<{ $percent: number }>`
+  width: ${({ $percent }) => $percent}%;
+  height: 100%;
+  background: var(--color-primary);
+`

@@ -2,11 +2,14 @@ import { RouterProvider } from 'react-router-dom'
 import { AuthProvider } from './Auth'
 import { PreferencesProvider } from './Preferences'
 import { router } from './router'
+import { CollectionProvider } from './Collection'
 
 const App = () => (
   <PreferencesProvider>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <CollectionProvider>
+        <RouterProvider router={router} />
+      </CollectionProvider>
     </AuthProvider>
   </PreferencesProvider>
 )

@@ -19,6 +19,7 @@
     },
     playTrailer: 'Ver tráiler',
     watchlistAdd: 'Mi lista',
+    watchlistRemove: 'Quitar de mi lista',
     notFound: {
       title: 'Película no encontrada',
       body: 'La película que buscas no existe.',

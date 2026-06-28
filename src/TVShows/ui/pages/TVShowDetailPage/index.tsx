@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { Link, Outlet, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { observer } from 'mobx-react-lite'
+import { useCollection, AddToListPopover } from '../../../../Collection'
 import {
   Button,
   CastCard,
@@ -34,6 +36,10 @@ import {
   Page,
   Poster,
   SeasonPanel,
+  ProgressFill,
+  ProgressMeta,
+  ProgressTrack,
+  ProgressWrap,
   Tagline,
   Title,
 } from './StyledComponents'
@@ -51,7 +57,8 @@ const NotFound = () => {
 )
 }
 
-const TVShowDetailPage = () => {
+const TVShowDetailPage = observer(() => {
+  const collection = useCollection()
   const { t } = useTranslation('tvShows')
   const { tvId, seasonNumber } = useParams()
   const id = Number(tvId)
@@ -76,10 +83,28 @@ const TVShowDetailPage = () => {
   }
 
   const show = detailQuery.data
+  const isInWatchlist = collection.isInWatchlist('tv', show.id)
+
+  const snapshot = {
+    id: show.id,
+    mediaType: 'tv' as const,
+    title: show.name,
+    posterPath: show.poster_path,
+    voteAverage: show.vote_average,
+    releaseDate: show.first_air_date,
+  }
+
+  const handleToggleWatchlist = () => {
+    collection.toggleWatchlist(snapshot)
+  }
+
   const trailer =
     show.videos.results.find((video) => video.site === 'YouTube' && video.type === 'Trailer') ??
     show.videos.results.find((video) => video.site === 'YouTube')
   const year = show.first_air_date ? show.first_air_date.slice(0, 4) : ''
+  const watchedEpisodeCount = collection.getWatchedEpisodeCount(show.id)
+  const totalEpisodeCount = show.number_of_episodes
+  const showProgressPercent = totalEpisodeCount > 0 ? Math.round((watchedEpisodeCount / totalEpisodeCount) * 100) : 0
   const renderCast = (member: CastMember) => <CastCard key={member.id} member={member} />
 
   return (
@@ -109,11 +134,27 @@ const TVShowDetailPage = () => {
                 ))}
               </Genres>
               <Overview>{show.overview}</Overview>
+              {totalEpisodeCount > 0 ? (
+                <ProgressWrap>
+                  <ProgressMeta>
+                    {t('progress.show', {
+                      watched: watchedEpisodeCount,
+                      total: totalEpisodeCount,
+                    })}
+                  </ProgressMeta>
+                  <ProgressTrack>
+                    <ProgressFill $percent={showProgressPercent} />
+                  </ProgressTrack>
+                </ProgressWrap>
+              ) : null}
               <Actions>
                 {trailer ? (
                   <Button onClick={() => setIsTrailerOpen(true)}>▶ {t('playTrailer')}</Button>
                 ) : null}
-                <Button type="button">+ {t('watchlistAdd')}</Button>
+                <Button type="button" onClick={handleToggleWatchlist}>
+                  {isInWatchlist ? '✓' : '+'} {isInWatchlist ? t('watchlistRemove') : t('watchlistAdd')}
+                </Button>
+                <AddToListPopover snapshot={snapshot} compact />
               </Actions>
             </Info>
           </HeroOverlay>
@@ -155,6 +196,6 @@ const TVShowDetailPage = () => {
       ) : null}
     </Page>
   )
-}
+})
 
 export default TVShowDetailPage

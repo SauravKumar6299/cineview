@@ -1,0 +1,67 @@
+export const collectionEn = {
+    watchlist: {
+      title: 'Watchlist',
+      subtitle: 'Track movies and TV shows you want to watch.',
+      empty: 'Your watchlist is empty.',
+      all: 'All',
+      filters: {
+        all: 'All',
+      },
+      episodeProgress: '{{watched}} episodes watched',
+      status: {
+        wantToWatch: 'Want to watch',
+        watching: 'Watching',
+        completed: 'Completed',
+      },
+      sort: {
+        label: 'Sort by',
+        newest: 'Recently added',
+        rating: 'Rating',
+        title: 'Title',
+      },
+      mediaType: {
+        movie: 'Movie',
+        tv: 'TV Show',
+      },
+      actions: {
+        remove: 'Remove',
+        notePlaceholder: 'Add a private note...',
+        saveNote: 'Save note',
+        clearNote: 'Clear note',
+      },
+      noteCounter: '{{count}}/300',
+    },
+    lists: {
+        title: 'My Lists',
+        subtitle: 'Create custom collections for your movies and TV shows.',
+        empty: 'You have not created any lists yet.',
+        create: 'Create list',
+        nameLabel: 'List name',
+        descriptionLabel: 'Description',
+        namePlaceholder: 'Weekend picks',
+        descriptionPlaceholder: 'Optional description...',
+        itemCount_one: '{{count}} item',
+        itemCount_other: '{{count}} items',
+        posterPreviewAlt: '{{title}} poster',
+        actions: {
+          save: 'Save',
+          cancel: 'Cancel',
+          rename: 'Rename',
+          delete: 'Delete',
+          confirmDelete: 'Delete this list?',
+        },
+        nameCounter: '{{count}}/60',
+        detail: {
+            notFoundTitle: 'List not found',
+            notFoundBody: 'This list does not exist or may have been deleted.',
+            backToLists: 'Back to lists',
+            empty: 'This list has no items yet.',
+            removeItem: 'Remove from list',
+        },
+        addToList: {
+            button: 'Add to list',
+            title: 'Add to lists',
+            empty: 'Create a list first to save items here.',
+        },
+    },
+  }

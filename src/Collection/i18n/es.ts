@@ -1,0 +1,67 @@
+export const collectionEs = {
+    watchlist: {
+      title: 'Mi lista',
+      subtitle: 'Sigue las películas y series que quieres ver.',
+      empty: 'Tu lista está vacía.',
+      all: 'Todo',
+      filters: {
+        all: 'Todo',
+      },
+      episodeProgress: '{{watched}} episodios vistos',
+      status: {
+          wantToWatch: 'Quiero ver',
+          watching: 'Viendo',
+          completed: 'Completado',
+        },
+        sort: {
+            label: 'Ordenar por',
+            newest: 'Agregado recientemente',
+            rating: 'Calificación',
+            title: 'Título',
+        },
+        mediaType: {
+            movie: 'Película',
+            tv: 'Serie',
+        },
+        actions: {
+            remove: 'Quitar',
+            notePlaceholder: 'Agrega una nota privada...',
+            saveNote: 'Guardar nota',
+            clearNote: 'Borrar nota',
+        },
+        noteCounter: '{{count}}/300',
+    },
+    lists: {
+      title: 'Mis listas',
+      subtitle: 'Crea colecciones personalizadas para tus películas y series.',
+      empty: 'Aún no has creado ninguna lista.',
+      create: 'Crear lista',
+      nameLabel: 'Nombre de la lista',
+      descriptionLabel: 'Descripción',
+      namePlaceholder: 'Planes de fin de semana',
+      descriptionPlaceholder: 'Descripción opcional...',
+      itemCount_one: '{{count}} elemento',
+      itemCount_other: '{{count}} elementos',
+      posterPreviewAlt: 'Póster de {{title}}',
+      actions: {
+        save: 'Guardar',
+        cancel: 'Cancelar',
+        rename: 'Renombrar',
+        delete: 'Eliminar',
+        confirmDelete: '¿Eliminar esta lista?',
+      },
+      nameCounter: '{{count}}/60',
+      detail: {
+        notFoundTitle: 'Lista no encontrada',
+        notFoundBody: 'Esta lista no existe o puede haber sido eliminada.',
+        backToLists: 'Volver a listas',
+        empty: 'Esta lista aún no tiene elementos.',
+        removeItem: 'Quitar de la lista',
+      },
+      addToList: {
+        button: 'Añadir a la lista',
+        title: 'Añadir a las listas',
+        empty: 'Crea una lista primero para guardar elementos aquí.',
+      },
+    },
+  }
